@@ -13,7 +13,7 @@ const href = location.href;
 function getAssetPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/assets/';
+        return '../public/static/assets/';
     }
     return href.substring(0, i) + "/examples/assets/";
 }
@@ -44,7 +44,7 @@ const pcTypes = getPlayCanvasTypes(); // eslint-disable-line @typescript-eslint/
 function getScriptsPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/scripts/';
+        return '../public/static/scripts/';
     }
     return href.substring(0, i) + "/scripts/";
 }
@@ -76,7 +76,7 @@ const iframePath = getIframePath(); // eslint-disable-line @typescript-eslint/no
 function getAmmoPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/lib/ammo/';
+        return '../public/static/lib/ammo/';
     }
     return href.substring(0, i) + "/examples/src/lib/ammo/";
 }
@@ -92,7 +92,7 @@ const ammoPath = getAmmoPath(); // eslint-disable-line @typescript-eslint/no-unu
 function getBasisPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/lib/basis/';
+        return '../public/static/lib/basis/';
     }
     return href.substring(0, i) + "/examples/src/lib/basis/";
 }
@@ -108,7 +108,7 @@ const basisPath = getBasisPath(); // eslint-disable-line @typescript-eslint/no-u
 function getDracoPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/lib/draco/';
+        return '../public/static/lib/draco/';
     }
     return href.substring(0, i) + "/examples/src/lib/draco/";
 }
@@ -124,7 +124,7 @@ const dracoPath = getDracoPath(); // eslint-disable-line @typescript-eslint/no-u
 function getGlslangPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/lib/glslang/';
+        return '../public/static/lib/glslang/';
     }
     return href.substring(0, i) + "/examples/src/lib/glslang/";
 }
@@ -140,7 +140,7 @@ const glslangPath = getGlslangPath(); // eslint-disable-line @typescript-eslint/
 function getTwgslPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '/playcanvas/public/static/lib/twgsl/';
+        return '../public/static/lib/twgsl/';
     }
     return href.substring(0, i) + "/examples/src/lib/twgsl/";
 }
