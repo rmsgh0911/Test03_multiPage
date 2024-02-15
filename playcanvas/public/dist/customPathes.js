@@ -1,4 +1,5 @@
 const href = location.href;
+const pathName = location.pathname.substring(0, location.pathname.lastIndexOf("/")-1);
 
 /**
  * Motivation is to not hardcode asset paths and change it quickly all at once.
@@ -13,7 +14,7 @@ const href = location.href;
 function getAssetPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '../public/static/assets/';
+        return pathName+'public/static/assets/';
     }
     return href.substring(0, i) + "/examples/assets/";
 }
@@ -44,7 +45,7 @@ const pcTypes = getPlayCanvasTypes(); // eslint-disable-line @typescript-eslint/
 function getScriptsPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '../public/static/scripts/';
+        return pathName+'/public/static/scripts/';
     }
     return href.substring(0, i) + "/scripts/";
 }
@@ -76,7 +77,7 @@ const iframePath = getIframePath(); // eslint-disable-line @typescript-eslint/no
 function getAmmoPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '../public/static/lib/ammo/';
+        return pathName+'/public/static/lib/ammo/';
     }
     return href.substring(0, i) + "/examples/src/lib/ammo/";
 }
@@ -92,7 +93,7 @@ const ammoPath = getAmmoPath(); // eslint-disable-line @typescript-eslint/no-unu
 function getBasisPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '../public/static/lib/basis/';
+        return pathName+'/public/static/lib/basis/';
     }
     return href.substring(0, i) + "/examples/src/lib/basis/";
 }
@@ -108,7 +109,7 @@ const basisPath = getBasisPath(); // eslint-disable-line @typescript-eslint/no-u
 function getDracoPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return '../public/static/lib/draco/';
+        return pathName+'/public/static/lib/draco/';
     }
     return href.substring(0, i) + "/examples/src/lib/draco/";
 }
@@ -140,7 +141,7 @@ const glslangPath = getGlslangPath(); // eslint-disable-line @typescript-eslint/
 function getTwgslPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return './public/static/lib/twgsl/';
+        return pathName+'/public/static/lib/twgsl/';
     }
     return href.substring(0, i) + "/examples/src/lib/twgsl/";
 }
