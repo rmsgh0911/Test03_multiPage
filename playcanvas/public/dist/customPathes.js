@@ -1,5 +1,5 @@
 const href = location.href;
-const pathName = location.pathname.substring(0, location.pathname.lastIndexOf("/")-1);
+const pathName = location.pathname.substring(0, location.pathname.lastIndexOf("/", location.pathname.length -2 ));
 
 /**
  * Motivation is to not hardcode asset paths and change it quickly all at once.
@@ -14,7 +14,7 @@ const pathName = location.pathname.substring(0, location.pathname.lastIndexOf("/
 function getAssetPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return pathName+'public/static/assets/';
+        return pathName+'/public/static/assets/';
     }
     return href.substring(0, i) + "/examples/assets/";
 }
@@ -125,7 +125,7 @@ const dracoPath = getDracoPath(); // eslint-disable-line @typescript-eslint/no-u
 function getGlslangPath() {
     const i = href.indexOf("/examples/");
     if (i === -1) { // npm run serve
-        return './public/static/lib/glslang/';
+        return pathName+'/public/static/lib/glslang/';
     }
     return href.substring(0, i) + "/examples/src/lib/glslang/";
 }
