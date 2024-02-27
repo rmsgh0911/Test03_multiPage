@@ -228,7 +228,7 @@ function createModel(modelName){
 }
 
 function addPoi(result){
-    var randomPosX = (Math.random() * 50) - 25;
+		var randomPosX = (Math.random() * 50) - 25;
         var randomPosZ = (Math.random() * 50) - 25;
 
         var scale = 0.01;
@@ -293,18 +293,18 @@ function addPoi(result){
 
 function createModel_resourceAgain(modelName) {
     // 있을 경우. 클론
-    if (modelResouce.hasOwnProperty('../models/' + modelName)) {
+    if (modelResouce.hasOwnProperty('/models/' + modelName)) {
 
-        //console.log(modelResouce['../models/'+modelName]);
-        //let tempResult = modelResouce['../models/'+modelName].clone();
-        let tempResult = Object.assign({}, modelResouce['../models/' + modelName]);
+        //console.log(modelResouce['/models/'+modelName]);
+        //let tempResult = modelResouce['/models/'+modelName].clone();
+        let tempResult = Object.assign({}, modelResouce['/models/' + modelName]);
         addPoi(tempResult);
 
     } else {
         // 없을 경우
         // 
         //console.log('createModel_resourceAgain');
-        console.log('createModel_resourceAgain', modelResouce.hasOwnProperty('../models/' + modelName));
+        console.log('createModel_resourceAgain', modelResouce.hasOwnProperty('/models/' + modelName));
 
         const resultPromise = BABYLON.SceneLoader.ImportMeshAsync("", "../models/", modelName, scene);
 
