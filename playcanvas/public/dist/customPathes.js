@@ -1,5 +1,6 @@
 const href = location.href;
-const pathName = location.pathname.substring(0, location.pathname.lastIndexOf("/", location.pathname.length -2 ));
+const tempPath = location.pathname.substring(0, location.pathname.lastIndexOf("/", location.pathname.length -2 ));
+const pathName = tempPath.substring(0, tempPath.lastIndexOf("/", tempPath.length -2 ));
 
 /**
  * Motivation is to not hardcode asset paths and change it quickly all at once.
